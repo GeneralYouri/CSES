@@ -1,0 +1,40 @@
+{
+    "name": "cses",
+    "version": "1.0.0",
+    "description": "My collection of JS-based solution for various CSES problems (Code Submission Evaluation System)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "webpack -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GeneralYouri/CSES.git"
+    },
+    "keywords": [
+        "cses",
+        "js",
+        "javascript",
+        "programming",
+        "problems",
+        "challenges",
+        "puzzles",
+        "algorithms",
+        "solutions"
+    ],
+    "author": "Youri Bok",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/GeneralYouri/CSES/issues"
+    },
+    "homepage": "https://github.com/GeneralYouri/CSES#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "babel-loader": "^8.2.2",
+        "webpack": "^5.11.1",
+        "webpack-cli": "^4.3.1"
+    },
+    "dependencies": {}
+}
