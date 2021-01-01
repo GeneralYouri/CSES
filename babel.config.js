@@ -13,6 +13,8 @@ module.exports = (api) => {
         ['@babel/preset-env', {
             targets: { node: '8.10.0' },
             // debug: true,
+            corejs: 3,
+            useBuiltIns: 'usage',
         }],
     ];
 

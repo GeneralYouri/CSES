@@ -7,9 +7,9 @@ module.exports = {
     mode: 'production',
 
     // Match all .mjs files separately, using useful names for `output.filename`
-    entry: glob.sync('./src/*/*/solution.mjs').reduce((acc, filename) => {
+    entry: glob.sync('./src/*/*/index.mjs').reduce((acc, filename) => {
         // The name will be exactly what `*/*` matches in the above glob
-        acc[filename.slice(6, -13)] = filename;
+        acc[filename.slice(6, -10)] = filename;
         return acc;
     }, {}),
     // Use the [name] reference to ensure each output file is correctly identified by its corresponding entry file
