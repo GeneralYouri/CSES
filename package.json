@@ -2,7 +2,7 @@
     "name": "cses",
     "version": "1.0.0",
     "description": "My collection of JS-based solution for various CSES problems (Code Submission Evaluation System)",
-    "main": "index.mjs",
+    "main": "run.mjs",
     "scripts": {
         "eslint": "eslint . --ext mjs,js",
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -45,5 +45,7 @@
         "webpack": "^5.11.1",
         "webpack-cli": "^4.3.1"
     },
-    "dependencies": {}
+    "dependencies": {
+        "yargs": "^16.2.0"
+    }
 }
