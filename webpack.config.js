@@ -1,8 +1,9 @@
 const glob = require('glob');
 const path = require('path');
-const webpack = require("webpack");
-const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 
+// eslint-disable-next-line global-require
 const banner = '@see ' + require('./package.json').homepage;
 
 // TODO: Look into caching to prevent the initial compilation when running `npm run watch`
@@ -37,7 +38,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         configFile: path.resolve(__dirname, 'babel.config.js'),
-                    }
+                    },
                 },
             },
         ],
