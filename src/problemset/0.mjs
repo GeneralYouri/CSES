@@ -1,14 +1,10 @@
 export const testcases = [
     {
+        input: '3 5',
         output: '8',
-        input: [
-            '3 5',
-        ],
     }, {
+        input: '-6 4',
         output: '-2',
-        input: [
-            '-6 4',
-        ],
     },
 ];
 

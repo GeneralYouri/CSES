@@ -15,7 +15,6 @@ const argv = yargs(hideBin(process.argv))
             alias: ['p'],
             string: true,
             default: 0,
-            implies: 'course',
             describe: 'The problem to run',
         },
         manual: {
@@ -68,13 +67,13 @@ const formatAnswer = (answer) => {
 
         console.log(`Running ${argv.course} ${argv.problem} against default inputs`);
         for (const testcase of module.testcases) {
-            const output = solution.call(null, testcase.input);
+            const output = solution.call(null, testcase.input.split('\n'));
             if (output === undefined) {
                 throw new Error('No solution yet');
             }
 
             const outputStr = formatAnswer(output);
-            const answerStr = formatAnswer(testcase.output);
+            const answerStr = testcase.output;
             if (outputStr !== answerStr) {
                 console.error('Incorrect output!');
             }
