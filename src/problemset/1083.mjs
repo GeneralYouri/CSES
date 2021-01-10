@@ -1,7 +1,6 @@
 export const testcases = [
     {
-        input:
-            '5\n'
+        input: '5\n'
             + '2 3 1 5',
         output: '4',
     },
