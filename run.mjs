@@ -36,7 +36,7 @@ const formatAnswer = (answer) => {
         }
         output = output.join('\n');
     }
-    return output.toString();
+    return output.toString().trim();
 };
 
 (async () => {
@@ -73,8 +73,8 @@ const formatAnswer = (answer) => {
             }
 
             const outputStr = formatAnswer(output);
-            const answerStr = testcase.output;
-            if (outputStr !== answerStr) {
+            const isCorrect = (typeof testcase.output === 'string') ? outputStr === testcase.output : module.verify(outputStr);
+            if (!isCorrect) {
                 console.error('Incorrect output!');
             }
             console.log(outputStr);
