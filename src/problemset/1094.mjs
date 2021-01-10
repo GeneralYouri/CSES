@@ -7,7 +7,7 @@ export const testcases = [
 ];
 
 export const solution = (lines) => {
-    // const n = Number(lines[0]);
+    const _n = Number(lines[0]);
     const N = lines[1].split(' ').map(Number);
     let count = 0;
     let current = 0;
