@@ -31,9 +31,7 @@ const argv = yargs(hideBin(process.argv))
 const formatAnswer = (answer) => {
     let output = answer;
     if (Array.isArray(answer)) {
-        if (Array.isArray(answer[0])) {
-            output = output.map(o => o.join(' '));
-        }
+        output = output.map(o => (Array.isArray(o) ? o.join(' ') : o.toString()));
         output = output.join('\n');
     }
     return output.toString().trim();
