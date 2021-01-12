@@ -1,11 +1,11 @@
 module.exports = {
     root: true,
     extends: 'airbnb-base',
-    // plugins: ['jest'],
+    plugins: ['jest'],
     env: {
         es2021: true,
         node: true,
-        // jest: true,
+        jest: true,
     },
     parser: '@babel/eslint-parser',
     parserOptions: {
@@ -20,7 +20,7 @@ module.exports = {
         },
     },
     rules: {
-        //
+        // ES Modules in NodeJS require file extensions
         'import/extensions': 'off',
 
 
