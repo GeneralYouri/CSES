@@ -1,13 +1,6 @@
-export const testcases = [
-    {
-        input: '4 3 5\n'
-            + '60 45 80 60\n'
-            + '30 60 75',
-        output: '2',
-    },
-];
+import { runFromCli } from '~/lib.mjs';
 
-export const solution = (lines) => {
+const solution = (lines) => {
     const [_n, _m, k] = lines[0].split(' ').map(Number);
     const A = lines[1].split(' ').map(Number).sort((a, b) => b - a);
     const B = lines[2].split(' ').map(Number).sort((a, b) => b - a);
@@ -32,3 +25,8 @@ export const solution = (lines) => {
     }
     return assigned;
 };
+export default solution;
+
+if (process.env.NODE_ENV !== 'test') {
+    runFromCli(solution);
+}
