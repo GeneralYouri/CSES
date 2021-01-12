@@ -1,18 +1,6 @@
-export const testcases = [
-    {
-        input: '8',
-        output: '0\n'
-            + '6\n'
-            + '28\n'
-            + '96\n'
-            + '252\n'
-            + '550\n'
-            + '1056\n'
-            + '1848',
-    },
-];
+import { runFromCli } from '../../lib.mjs';
 
-export const solution = (lines) => {
+const solution = (lines) => {
     const n = Number(lines[0]);
     const output = [];
     for (let k = 1; k <= n; k += 1) {
@@ -20,3 +8,8 @@ export const solution = (lines) => {
     }
     return output;
 };
+export default solution;
+
+if (!process.stdin.isTTY) {
+    runFromCli(solution);
+}
