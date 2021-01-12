@@ -1,12 +1,6 @@
-export const testcases = [
-    {
-        input: '5\n'
-            + '2 3 1 5',
-        output: '4',
-    },
-];
+import { runFromCli } from '~/lib.mjs';
 
-export const solution = (lines) => {
+const solution = (lines) => {
     const n = Number(lines[0]);
     const N = lines[1].split(' ').map(Number);
     const seen = Array(n + 1).fill(false);
@@ -16,3 +10,8 @@ export const solution = (lines) => {
     }
     return seen.indexOf(false);
 };
+export default solution;
+
+if (process.env.NODE_ENV !== 'test') {
+    runFromCli(solution);
+}
