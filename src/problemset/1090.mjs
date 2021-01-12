@@ -1,12 +1,6 @@
-export const testcases = [
-    {
-        input: '4 10\n'
-            + '7 2 3 9',
-        output: '3',
-    },
-];
+import { runFromCli } from '~/lib.mjs';
 
-export const solution = (lines) => {
+const solution = (lines) => {
     const [_n, x] = lines[0].split(' ').map(Number);
     const P = lines[1].split(' ').map(Number).sort((a, b) => b - a);
     let i = 0;
@@ -26,3 +20,8 @@ export const solution = (lines) => {
     }
     return gondolas;
 };
+export default solution;
+
+if (process.env.NODE_ENV !== 'test') {
+    runFromCli(solution);
+}
