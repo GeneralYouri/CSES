@@ -1,4 +1,4 @@
-import { runFromCli } from '../../lib.mjs';
+import { runFromCli } from '~/lib';
 
 const solution = (lines) => {
     return undefined;
