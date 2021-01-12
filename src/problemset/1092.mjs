@@ -1,27 +1,9 @@
-export const verify = (output) => {
-    if (output === 'NO') {
-        return true;
-    }
-    const lines = output.split(/\n/g);
-    const sum1 = lines[2].split(' ').map(Number).reduce((sum, n) => sum + n, 0);
-    const sum2 = lines[4].split(' ').map(Number).reduce((sum, n) => sum + n, 0);
-    return sum1 === sum2;
-};
+import { runFromCli } from '~/lib.mjs';
 
-export const testcases = [
-    {
-        input: '7',
-        output: verify,
-    }, {
-        input: '6',
-        output: 'NO',
-    },
-];
-
-export const solution = (lines) => {
+const solution = (lines) => {
     const n = Number(lines[0]);
     if (n % 4 === 1 || n % 4 === 2) {
-        return ['NO'];
+        return 'NO';
     }
 
     const set1 = [n];
@@ -42,3 +24,8 @@ export const solution = (lines) => {
         set2.length, set2,
     ];
 };
+export default solution;
+
+if (process.env.NODE_ENV !== 'test') {
+    runFromCli(solution);
+}
