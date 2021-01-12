@@ -1,11 +1,6 @@
-export const testcases = [
-    {
-        input: 'ATTCGGGA',
-        output: '3',
-    },
-];
+import { runFromCli } from '../../lib.mjs';
 
-export const solution = (lines) => {
+const solution = (lines) => {
     const dna = (lines[0] + '_').split('');
     let best = 0;
     let length = 0;
@@ -23,3 +18,8 @@ export const solution = (lines) => {
     }
     return best;
 };
+export default solution;
+
+if (!process.stdin.isTTY) {
+    runFromCli(solution);
+}
