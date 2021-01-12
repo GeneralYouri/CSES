@@ -1,4 +1,4 @@
-import { runFromCli } from '../../lib.mjs';
+import { runFromCli } from '~/lib.mjs';
 
 const solution = (lines) => {
     const n = Number(lines[0]);
@@ -10,6 +10,6 @@ const solution = (lines) => {
 };
 export default solution;
 
-if (!process.stdin.isTTY) {
+if (process.env.NODE_ENV !== 'test') {
     runFromCli(solution);
 }

@@ -14,9 +14,10 @@ module.exports = {
     },
     settings: {
         'import/resolver': {
-            node: {
-                extensions: ['.mjs', '.js', '.json'],
-            },
+            'babel-plugin-root-import': {},
+            // node: {
+            //     extensions: ['.mjs', '.js', '.json'],
+            // },
         },
     },
     rules: {

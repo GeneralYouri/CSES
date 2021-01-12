@@ -14,6 +14,13 @@ module.exports = {
         ignored: /node_modules/,
     },
 
+    // Allow relative imports from the project root dir using ~
+    resolve: {
+        alias: {
+            '~': path.resolve(__dirname),
+        },
+    },
+
     /** Properly link a variable number of individual entry files to corresponding output files */
     // Match all .mjs files separately, using useful names for `output.filename`
     entry: glob.sync('./src/*/*.mjs').reduce((acc, filename) => {
