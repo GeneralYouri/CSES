@@ -10,11 +10,13 @@ const countDifferentBits = (a, b) => {
     return count;
 };
 
-const verify = (lines) => {
+const verify = (fn, input) => {
+    const lines = fn(input);
     return lines.every((line, i) => {
         if (i === 0) {
             return true;
         }
+
         const a = Number.parseInt(line, 2);
         const b = Number.parseInt(lines[i - 1], 2);
         return countDifferentBits(a, b) === 1;
@@ -22,5 +24,5 @@ const verify = (lines) => {
 };
 
 test('Provided test cases', () => {
-    expect(verify(solution(['2']))).toBe(true);
+    expect(verify(solution, ['2'])).toBe(true);
 });
