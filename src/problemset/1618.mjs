@@ -1,7 +1,12 @@
 import { runFromCli } from '~/lib.mjs';
 
 const solution = (lines) => {
-    return undefined;
+    const n = Number(lines[0]);
+    let count = 0;
+    for (let k = 5; k <= n; k *= 5) {
+        count += Math.trunc(n / k);
+    }
+    return count;
 };
 export default solution;
 
