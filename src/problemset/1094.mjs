@@ -1,4 +1,4 @@
-import { runFromCli } from '~/lib.mjs';
+import { runFromCli } from '~/library.mjs';
 
 const solution = (lines) => {
     const _n = Number(lines[0]);

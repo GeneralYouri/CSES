@@ -1,4 +1,4 @@
-import { runFromCli } from '~/lib.mjs';
+import { runFromCli } from '~/library.mjs';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const solution = (lines) => {

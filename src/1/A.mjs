@@ -1,4 +1,4 @@
-import { runFromCli } from '~/lib.mjs';
+import { runFromCli } from '~/library.mjs';
 
 const solution = (lines) => {
     const [a, b] = lines[0].split(' ').map(Number);

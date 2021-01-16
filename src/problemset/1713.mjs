@@ -1,4 +1,4 @@
-import { runFromCli } from '~/lib.mjs';
+import { runFromCli } from '~/library.mjs';
 
 // An implementation of the Sieve of Eratosthenes, to generate all prime numbers below a given limit
 /** @see http://www.luschny.de/math/factorial/scala/FactorialScalaCsharp.htm */

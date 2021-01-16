@@ -1,4 +1,4 @@
-import { runFromCli } from '~/lib.mjs';
+import { runFromCli } from '~/library.mjs';
 
 const solution = (lines) => {
     const dna = (lines[0] + '_').split('');
