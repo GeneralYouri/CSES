@@ -1,3 +1,30 @@
+const partition = (A, low, high) => {
+    const pivot = A[(high + low) >> 1];
+    let i = low;
+    let j = high;
+    while (true) {
+        while (A[i] < pivot) {
+            i += 1;
+        }
+        while (A[j] > pivot) {
+            j -= 1;
+        }
+        if (i >= j) {
+            return j;
+        }
+        [A[i], A[j]] = [A[j], A[i]];
+    }
+};
+
+export const QuickSort = (A, low = 0, high = A.length - 1) => {
+    if (low < high) {
+        const pivot = partition(A, low, high);
+        QuickSort(A, low, pivot);
+        QuickSort(A, pivot + 1, high);
+    }
+    return A;
+};
+
 export const permutationsUnique = (permutationOptions) => {
     if (permutationOptions.length <= 1) {
         return [permutationOptions];
