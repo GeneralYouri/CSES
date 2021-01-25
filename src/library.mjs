@@ -1,29 +1,89 @@
-const partition = (A, low, high) => {
+/** region QuickSort */
+// const partition = (A, low, high) => {
+//     const pivot = A[(high + low) >> 1];
+//     let i = low;
+//     let j = high;
+//     while (true) {
+//         while (A[i] < pivot) {
+//             i += 1;
+//         }
+//         while (A[j] > pivot) {
+//             j -= 1;
+//         }
+//         if (i >= j) {
+//             return j;
+//         }
+//         [A[i], A[j]] = [A[j], A[i]];
+//     }
+// };
+//
+// export const QuickSort = (A, low = 0, high = A.length - 1) => {
+//     if (low < high) {
+//         const pivot = partition(A, low, high);
+//         QuickSort(A, low, pivot);
+//         QuickSort(A, pivot + 1, high);
+//     }
+//     return A;
+// };
+
+const partition = (A, pivot, low, high) => {
+    let i = low;
+    let j = low;
+    let k = high;
+    while (j <= k) {
+        if (A[j] < pivot) {
+            [A[i], A[j]] = [A[j], A[i]];
+            i += 1;
+            j += 1;
+        } else if (A[j] > pivot) {
+            [A[j], A[k]] = [A[k], A[j]];
+            k -= 1;
+        } else {
+            j += 1;
+        }
+    }
+    return [i, j];
+};
+
+export const QuickSort = (A, low = 0, high = A.length - 1) => {
+    if (low < high) {
+        const pivot = A[Math.floor((high + low) / 2)];
+        const [left, right] = partition(A, pivot, low, high);
+        QuickSort(A, low, left - 1);
+        QuickSort(A, right, high);
+    }
+    return A;
+};
+
+/*
+const partition = (A, low, high, sortFn) => {
     const pivot = A[(high + low) >> 1];
     let i = low;
     let j = high;
     while (true) {
-        while (A[i] < pivot) {
+        while (sortFn(A[i], pivot) < 0) {
             i += 1;
         }
-        while (A[j] > pivot) {
+        while (sortFn(A[j], pivot) > 0) {
             j -= 1;
         }
-        if (i >= j) {
-            return j;
+        if (i >= j || sortFn(A[i], A[j]) === 0) {
+            return i;
         }
         [A[i], A[j]] = [A[j], A[i]];
     }
 };
 
-export const QuickSort = (A, low = 0, high = A.length - 1) => {
+export const QuickSort = (A, low = 0, high = A.length - 1, sortFn = (a, b) => a - b) => {
     if (low < high) {
-        const pivot = partition(A, low, high);
-        QuickSort(A, low, pivot);
-        QuickSort(A, pivot + 1, high);
+        const pivot = partition(A, low, high, sortFn);
+        QuickSort(A, low, pivot, sortFn);
+        QuickSort(A, pivot + 1, high, sortFn);
     }
     return A;
 };
+ */
+/** endregion */
 
 export const permutationsUnique = (permutationOptions) => {
     if (permutationOptions.length <= 1) {
